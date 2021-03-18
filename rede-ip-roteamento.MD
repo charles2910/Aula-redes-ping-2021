@@ -1,4 +1,5 @@
-#Camada de Rede
+# Camada de Rede
+
 Nessa camada podemos começar a falar de Internet, pois ela é responsável por
 garantir o envio ou roteamento de pacotes entre redes distintas. Para realizar
 esse tarefa, ela implementa os seguintes mecanismos:
@@ -8,6 +9,7 @@ esse tarefa, ela implementa os seguintes mecanismos:
 -	Interfaces
 
 ## Endereçamento lógico
+
 Endereçamento 'virtual' de cada nó (aparelho, como um computador ou um
 celular) na rede. Esse endereçamento não é fixo como o MAC address, que
 é intrínseco ao Hardware, mas sim alocado de acordo com algum protocolo
@@ -42,13 +44,12 @@ possui duas características muito úteis:
 -	Retrocompatibilidade com IPv4
 		**IPv4:** 192.0.2.33
 		**IPv6:** ::ffff:192.0.2.33  (basta usar o prefixo **::ffff:**)
-<br>
 
 -	Compressão de endereços por omissão de zeros à esquerda
 		**IPv6:** 2001:0db8:c9d2:0012:0000:0000:0000:0051
 		**IPv6 comprimido:** 2001:db8:c9d2:12::51
 
--	#### Mascaras de subrede
+-	#### Máscaras de subrede
 
 As máscaras de subrede ou Network masks são, também, uma sequencia formada
 por 4 octetos e servem para dividir um IP em duas porções:
