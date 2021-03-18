@@ -12,14 +12,14 @@ Concebido em 1983, o IPv4 (Internet Protocol version 4) foi o primeiro protocolo
 
 Dessa forma, permite 2³² = 4.294.967.296 endereços únicos, o que rapidamente se tornou insuficiente para acomodar a grande quantidade de aparelhos com acesso a internet. 
 
-![Exemplo de endereço IPv4](IPv4-example.png)
+![Exemplo de endereço IPv4](img/IPv4-example.png)
 
 -	#### IPv6
 Criado em 1995, o protocolo IPv6 (Internet Protocol version 6) veio para expandir a quantidade de endereços cobertos pelo IPv4. Ele descreve os endereços usando 128 bits ou **8 grupos de 4 digitos hexadecimais**. 
 
 Isso nos dá 2¹²⁸ ou, aproximadamente 3,4 ⋅ 10³⁸ endereços. Comparativamente, temos 79 milhões de bilhões de trilhões de vezes a quantidade de endereços possiveis com o IPv4.
 
-![Exemplo de endereço IPv6](IPv6-example.png)
+![Exemplo de endereço IPv6](img/IPv6-example.png)
 
 Além de expandir imensamente a quantidade de endereços possíveis, o IPv6 possui duas características muito úteis:
 -	Retrocompatibilidade com IPv4
@@ -72,6 +72,6 @@ Para vermos quais interfaces estão atualmente presentes, usamos o comando:
 				
 	ip address
 
-![listando as interfaces](loopback_highlighted.png)
+![listando as interfaces](img/loopback_highlighted.png)
 
 Assim, conseguimos visualizar que a interface loopback ou _lo_ tem o endereço _127.0.0.1/8_ para o IPv4 e _::1/128_ para o IPv6.
