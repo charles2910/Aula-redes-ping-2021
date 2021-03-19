@@ -4,8 +4,8 @@ Nessa camada podemos começar a falar de Internet, pois ela é baseada
 nas camadas TCP/IP, na verdade, elas são as diretrizes práticas para a
 implementação da camada de transporte e de rede respectivamente. A
 camada de rede (a teórica do modelo OSI) é responsável por garantir o
-envio e roteamento de pacotes entre redes distintas. Para realizar
-esse tarefa, ela implementa os seguintes mecanismos:
+envio e roteamento de pacotes entre computadores em redes distintas.
+Para realizar esse tarefa, ela implementa os seguintes mecanismos:
 
 -	Endereçamento lógico e hierárquico
 -	Roteamento de pacotes
@@ -19,7 +19,7 @@ celular) na rede. Esse endereçamento não é fixo como o MAC address, que
 especificado. Adicionalmente pode ser alocado estaticamente (fixo) ou
 dinamicamente (um servidor designa os endereços conforme necessário).
 
-Vale salientar também que o endereço de rede possui duas partes com
+Vale salientar também que o endereço dessa camada possui duas partes com
 funções diferentes. A primeira parte é a identificação da rede a qual
 o nó pertence, dessa forma podemos identificar quais computadores estão
 interligados pela mesma rede. A segunda parte é a identificação do
@@ -28,7 +28,7 @@ imagine um conjunto de casas em uma rua, elas possuem duas partes no
 endereço, o nome da rua (parte de rede) e o número da casa (parte do
 *host*).
 
--	#### IPv4
+### IPv4
 
 Concebido em 1983, o IPv4 (Internet Protocol version 4) foi o primeiro
 protocolo amplamente adotado para endereçamento lógico. Ele descreve cada
@@ -40,7 +40,7 @@ internet.
 
 ![Exemplo de endereço IPv4](img/IPv4-example.png)
 
--	#### IPv6
+### IPv6
 
 Criado em 1995, o protocolo IPv6 (Internet Protocol version 6) veio para
 expandir a quantidade de endereços cobertos pelo IPv4. Ele descreve os
@@ -63,7 +63,7 @@ possui duas características muito úteis:
 	-	**IPv6:** 2001:0db8:c9d2:0012:0000:0000:0000:0051
 	-	**IPv6 comprimido:** 2001:db8:c9d2:12::51
 
--	#### Máscaras de rede
+### Máscaras de rede
 
 As máscaras de rede ou Network masks são, também, uma sequencia formada
 por 4 octetos e servem para dividir um IP em duas porções:
@@ -120,7 +120,7 @@ que tenha mais conhecimento, esta pessoa é o chamado **default gateway**.
 
 <!-- Inserir imagem / gif aqui! -->
 
-## Interface
+## Interface de Rede
 
 Geralmente associada à hardware, como à Placa de rede, a interface é
 essencial para estabelecer conexões - sem ela isso não é possivel. Cada
