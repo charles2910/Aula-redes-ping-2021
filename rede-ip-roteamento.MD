@@ -1,21 +1,34 @@
 # Camada de Rede
 
-Nessa camada podemos começar a falar de Internet, pois ela é responsável por
-garantir o envio ou roteamento de pacotes entre redes distintas. Para realizar
-esse tarefa, ela implementa os seguintes mecanismos:
+Nessa camada podemos começar a falar de Internet, pois ela é baseada
+nas camadas TCP/IP, na verdade, elas são as diretrizes práticas para a
+implementação da camada de transporte e de rede respectivamente. A
+camada de rede (a teórica do modelo OSI) é responsável por garantir o
+envio e roteamento de pacotes entre computadores em redes distintas.
+Para realizar esse tarefa, ela implementa os seguintes mecanismos:
 
--	Endereçamento lógico
--	Roteamento
--	Interfaces
+-	Endereçamento lógico e hierárquico
+-	Roteamento de pacotes
+-	Interfaces de rede
 
 ## Endereçamento lógico
 
 Endereçamento 'virtual' de cada nó (aparelho, como um computador ou um
 celular) na rede. Esse endereçamento não é fixo como o MAC address, que
 é intrínseco ao Hardware, mas sim alocado de acordo com algum protocolo
-especificado. Adicionalmente pode ser alocado estaticamente ou dinamicamente.
+especificado. Adicionalmente pode ser alocado estaticamente (fixo) ou
+dinamicamente (um servidor designa os endereços conforme necessário).
 
--	#### IPv4
+Vale salientar também que o endereço dessa camada possui duas partes com
+funções diferentes. A primeira parte é a identificação da rede a qual
+o nó pertence, dessa forma podemos identificar quais computadores estão
+interligados pela mesma rede. A segunda parte é a identificação do
+computador propriamente dito. Podemos fazer um paralelo com o cotidiano,
+imagine um conjunto de casas em uma rua, elas possuem duas partes no
+endereço, o nome da rua (parte de rede) e o número da casa (parte do
+*host*).
+
+### IPv4
 
 Concebido em 1983, o IPv4 (Internet Protocol version 4) foi o primeiro
 protocolo amplamente adotado para endereçamento lógico. Ele descreve cada
@@ -27,7 +40,8 @@ internet.
 
 ![Exemplo de endereço IPv4](img/IPv4-example.png)
 
--	#### IPv6
+### IPv6
+
 Criado em 1995, o protocolo IPv6 (Internet Protocol version 6) veio para
 expandir a quantidade de endereços cobertos pelo IPv4. Ele descreve os
 endereços usando 128 bits ou **8 grupos de 4 digitos hexadecimais**. 
@@ -42,19 +56,19 @@ Além de expandir imensamente a quantidade de endereços possíveis, o IPv6
 possui duas características muito úteis:
 
 -	Retrocompatibilidade com IPv4
-		**IPv4:** 192.0.2.33
-		**IPv6:** ::ffff:192.0.2.33  (basta usar o prefixo **::ffff:**)
+	-	**IPv4:** 192.0.2.33
+	-	**IPv6:** ::ffff:192.0.2.33  (basta usar o prefixo **::ffff:**)
 
 -	Compressão de endereços por omissão de zeros à esquerda
-		**IPv6:** 2001:0db8:c9d2:0012:0000:0000:0000:0051
-		**IPv6 comprimido:** 2001:db8:c9d2:12::51
+	-	**IPv6:** 2001:0db8:c9d2:0012:0000:0000:0000:0051
+	-	**IPv6 comprimido:** 2001:db8:c9d2:12::51
 
--	#### Máscaras de subrede
+### Máscaras de rede
 
-As máscaras de subrede ou Network masks são, também, uma sequencia formada
+As máscaras de rede ou Network masks são, também, uma sequencia formada
 por 4 octetos e servem para dividir um IP em duas porções:
 
--	Endereço
+-	Rede
 -	Hosts
 
 Para descobrimos a porção da rede a partir de um IP, realiza-se um bitwise
@@ -93,11 +107,20 @@ O roteamento consiste em transportar pacotes de dados entre redes distintas,
 tentando ao mesmo tempo descobrir a melhor rota e entregar integralmente os
 dados. Para isso, vão ser utilizados endereços que identificam quais nós da
 rede receberão a chamada. Cada propagação de pacote, de um roteador para
-outro, é chamado de _hop_
+outro, é chamado de _hop_.
+
+Nesse momento, trabalha-se quase exclusivamente com a parte de rede do
+endereço. O roteador é um equipamento especializado para fazer esse
+encaminhamento de pacotes e, por isso, deve estar conectado em mais de
+uma rede. Quando ele recebe um pacote, verifica qual o endereço de destino
+do pacote e procura na sua tabela de roteamento se ele está conectado nessa
+rede. Se ele estiver, já pode enviar o pacote para o *host* certo (o
+destinatário do pacote). Caso não esteja, ele envia o pacote para alguém
+que tenha mais conhecimento, esta pessoa é o chamado **default gateway**.
 
 <!-- Inserir imagem / gif aqui! -->
 
-## Interface
+## Interface de Rede
 
 Geralmente associada à hardware, como à Placa de rede, a interface é
 essencial para estabelecer conexões - sem ela isso não é possivel. Cada
@@ -114,7 +137,9 @@ aplicações ou processos nesse mesmo computador.
 
 Para vermos quais interfaces estão atualmente presentes, usamos o comando:
 				
+```
 	ip address
+```
 
 ![listando as interfaces](img/loopback_highlighted.png)
 
