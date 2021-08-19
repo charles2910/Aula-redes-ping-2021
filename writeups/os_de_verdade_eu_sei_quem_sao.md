@@ -14,4 +14,4 @@ selecionar o pacote, clicar com botão direito e `Follow -> Tcp Stream`.
 Chegamos na stream 22 onde ocorre a transação da flag em pequenos pedaços,
 basta juntar e teremos a flag.
 
-flag: Ganesh{k1b0n_4nd_br4ndt_x9s}
+Flag: `Ganesh{k1b0n_4nd_br4ndt_x9s}`
